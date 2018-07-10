@@ -40,7 +40,11 @@
         </div>
       </div>
       <div class="footerBot">
-        <div class="footerBotCont"></div>
+        <div class="footerBotCont">
+          <div class="footerContLeft"></div>
+          <div class="footerContMiddle"></div>
+          <div class="footerContRight"></div>
+        </div>
       </div>
     </footer>
 	</div>
@@ -182,6 +186,7 @@
     margin-right: 30px;
   }
   .footerNav>ul>li>a{
+    margin-top:20px;
     width: 84px;
     height: 16px;
     display: block;
