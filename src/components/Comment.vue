@@ -158,7 +158,7 @@
   .footerNav{
     height: 63px;
     width: 1200px;
-    background-color: silver;
+    /*background-color: silver;*/
     margin: 0 auto;
   }
   footer>.footerTop{
@@ -167,9 +167,12 @@
   }
   .footerBotCont{
     width: 1200px;
-    background-color: silver;
+    /*background-color: silver;*/
     margin: 0 auto;
     height:207px;
+  }
+  .footerNav{
+
   }
   .footerNav>ul{
     background-color: red;
@@ -177,6 +180,17 @@
   .footerNav>ul>li{
     float: left;
     margin-right: 30px;
+  }
+  .footerNav>ul>li>a{
+    width: 84px;
+    height: 16px;
+    display: block;
+    float: left;
+    font-size: 14px;
+    color: #cacaca;
+    border-left: 1px solid #cacaca;
+    text-align: center;
+    line-height: 16px;
   }
   .rightGo{
     float: right;
