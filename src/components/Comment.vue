@@ -41,8 +41,19 @@
       </div>
       <div class="footerBot">
         <div class="footerBotCont">
-          <div class="footerContLeft"></div>
-          <div class="footerContMiddle"></div>
+          <div class="footerContLeft">
+            <p style="text-align: center;">
+              <a href="javascript:;" target="_blank" textvalue="防赌博说明 ">防赌博说明 </a> | <a href="javascript:;" target="_blank" textvalue="防沉迷说明">防沉迷说明</a></p>
+            <p>健康游戏忠告：抵制不良游戏，拒绝盗版游戏，注意自我保护，谨防受骗上当。</p>
+            <p>适度游戏益脑，沉迷游戏伤身。合理安排时间，享受健康生活。</p>
+            <p>2018@浙江龙公子旅游有限公司 版权所有，浙江龙公子旅游有限公司</p>
+            <p>浙ICP备18008465号-1   联系方式:0576-88224545</p>
+          </div>
+          <div class="footerContMiddle">
+            <strong>0576-88224545</strong>
+            <p>9:00~15:00</p>
+            <a href="javascript:;" target="_blank" class="kefu">QQ在线客服</a>
+          </div>
           <div class="footerContRight"></div>
         </div>
       </div>
@@ -61,17 +72,6 @@
           {name:'公司介绍'},
           {name:'游戏下载'},
           {name:'充值中心'},
-          {name:'用户使用协议'},
-          {name:'家长监护'},
-          {name:'联系我们'},
-        ],
-        //底部导航菜单列表
-        botNavList:[
-          {name:'首页'},
-          {name:'公司介绍'},
-          {name:'游戏下载'},
-          {name:'充值中心'},
-          {name:'纠纷处理'},
           {name:'用户使用协议'},
           {name:'家长监护'},
           {name:'联系我们'},
@@ -209,5 +209,49 @@
     display: block;
     text-align: center;
     line-height: 63px;
+  }
+  .footerContLeft{
+    width:581px;
+    text-align: center;
+    margin-top: 50px;
+    border-right:1px solid #595959;
+    float: left;
+  }
+  .footerContLeft>p{
+    margin-bottom:5px;
+    font-size: 12px;
+    color: #5b5a58;
+  }
+  .footerContLeft>p>a{
+    color: #337ab7;
+    font-size: 12px;
+    display: inline-block;
+  }
+  .footerContMiddle{
+    width: 289px;
+    float: left;
+    padding-left: 45px;
+    padding-top: 30px;
+  }
+  .footerContMiddle>strong{
+    height: 40px;
+    font-size: 30px;
+    color: #5d5c5a;
+    line-height: 40px;
+    padding-bottom:;: 10px;
+  }
+  .footerContMiddle>p{
+    font-size: 12px;
+    color: #5b5a58;
+    margin:10px 0;
+  }
+  .kefu {
+    width: 116px;
+    height: 30px;
+    display: block;
+    background: #016fba;
+    color: #fff;
+    line-height: 30px;
+    text-align: center;
   }
 </style>
