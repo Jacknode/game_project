@@ -13,10 +13,14 @@
         </div>
         <div class="recommendGame">
           <strong>相关文章</strong>
-          <a href="JavaScript:;"> + 纠纷处理</a>
-          <a href="JavaScript:;"> + 防沉迷说明</a>
-          <a href="JavaScript:;"> + 公司介绍</a>
-          <a href="JavaScript:;"> + 家长监护</a>
+          <router-link to="/Comment/GameDetails">+ 游戏下载</router-link>
+          <!--<li><router-link to="/Comment/ParentsCare">充值中心</router-link></li>-->
+          <router-link to="/Comment/UserAgr">+ 用户使用协议</router-link>
+          <router-link to="/Comment/ParentsCare">+ 家长监护</router-link>
+          <!--<a href="JavaScript:;"> + 纠纷处理</a>-->
+          <!--<a href="JavaScript:;"> + 防沉迷说明</a>-->
+          <!--<a href="JavaScript:;"> + 公司介绍</a>-->
+          <!--<a href="JavaScript:;"> + 家长监护</a>-->
           <span>猜你喜欢</span>
           <img width="122" height="92" src="http://uus-img7.android.d.cn/content_pic/201806/behpic/icon/23/1-82023/icon-1529032764251.png" alt="">
           <a href="javascript:;">神游记</a>

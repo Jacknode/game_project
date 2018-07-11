@@ -4,21 +4,30 @@
       <header>
         <div class="headBox">
           <ul class="navBox">
-            <li><a href="javascript:;"><img src="" alt=""></a></li>
-            <li><router-link to="/Comment/ParentsCare">首页</router-link></li>
-            <li><router-link to="/Comment/CompanyIntroduce">公司介绍</router-link></li>
-            <li><router-link to="/Comment/GameDetails">游戏下载</router-link></li>
-            <!--<li><router-link to="/Comment/ParentsCare">充值中心</router-link></li>-->
-            <li><router-link to="/Comment/UserAgr">用户使用协议</router-link></li>
-            <li><router-link to="/Comment/ParentsCare">家长监护</router-link></li>
+
+            <li><a href="javascript:;"><img src="http://www.lgz18.com/attachment/images/1/2018/03/VeQx4NqNUAhY2beqHn4ENNwNybnZSa.png" alt="" width="100" height="100"></a></li>
+            <li v-for="item,index in urlList" @click="change(index)" :class="{active:index==n}">
+              <router-link :to="item.to">{{item.name}}</router-link>
+            </li>
+            <!--<li><router-link to="/Comment/ParentsCare">首页</router-link></li>-->
+            <!--<li><router-link to="/Comment/CompanyIntroduce">公司介绍</router-link></li>-->
+            <!--<li><router-link to="/Comment/GameDetails">游戏下载</router-link></li>-->
+            <!--&lt;!&ndash;<li><router-link to="/Comment/ParentsCare">充值中心</router-link></li>&ndash;&gt;-->
+            <!--<li><router-link to="/Comment/UserAgr">用户使用协议</router-link></li>-->
+            <!--<li><router-link to="/Comment/ParentsCare">家长监护</router-link></li>-->
             <!--<li><router-link to="/Comment/ParentsCare">联系我们</router-link></li>-->
             <!--<li v-for="item in headerNavList"><a href="javascript:;">{{item.name}}</a></li>-->
             <li>本游戏适合18岁 (含) 以上玩家进入</li>
           </ul>
           <div class="loginBox">
             <ul>
-              <li class="login"><a href="javascript:;">登录</a></li>
-              <li class="register"><a href="javascript:;">注册</a></li>
+              <li class="login">
+                <router-link to="/Login">登录</router-link>
+                <!--<a href="javascript:;">登录</a>-->
+              </li>
+              <li class="register">
+                <router-link to="/Register">注册</router-link>
+              </li>
             </ul>
           </div>
         </div>
@@ -77,6 +86,29 @@
 		name:'',
     data(){
 		  return {
+		    urlList:[
+          {
+            name:'首页',
+            to:'/'
+          },
+          {
+            name:'公司介绍',
+            to:'/Comment/CompanyIntroduce'
+          },
+          {
+            name:'游戏下载',
+            to:'/Comment/GameDetails'
+          },
+          {
+            name:'用户使用协议',
+            to:'/Comment/UserAgr'
+          },
+          {
+            name:'家长监护',
+            to:'/Comment/ParentsCare'
+          }
+        ],
+		    n:0,
 		    //导航菜单列表
         headerNavList:[
           {name:'首页'},
@@ -87,6 +119,19 @@
           {name:'家长监护'},
           {name:'联系我们'},
         ],
+      }
+    },
+    created(){
+      this.n = JSON.parse(sessionStorage.getItem('commentNavNum'));
+    },
+    methods:{
+      toTab(index){
+        let commentNavNum = JSON.parse(sessionStorage.getItem('indexNumber'));
+        sessionStorage.setItem('commentNavNum', index);
+        this.n = JSON.parse(sessionStorage.getItem('commentNavNum'));
+      },
+      change(index){
+        this.toTab(index)
       }
     }
 	}
@@ -112,6 +157,9 @@
     font-size: 14px;
     font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
   }
+  .navBox>li.active a{
+    color: #00aeff;
+  }
   .navBox>li>a:hover{
     color: #00aeff;
   }
@@ -119,19 +167,19 @@
     display: block;
     width: 100px;
     height:100px;
-    background-color: blue;
+    /*background-color: blue;*/
     margin-top: -50px;
   }
-  .navBox>li:nth-child(2)>a{
-    color: #00aeff;
-  }
-  .navBox>li:nth-last-child(1){
-    color: rgb(150, 150, 150);
-    height: 30px;
-    text-align: center;
-    line-height: 30px;
-    font-size: 14px;
-  }
+  /*.navBox>li:nth-child(2)>a{*/
+    /*color: #00aeff;*/
+  /*}*/
+  /*.navBox>li:nth-last-child(1){*/
+    /*color: rgb(150, 150, 150);*/
+    /*height: 30px;*/
+    /*text-align: center;*/
+    /*line-height: 30px;*/
+    /*font-size: 14px;*/
+  /*}*/
   .loginBox{
     /*width:200px;*/
     height: 30px;

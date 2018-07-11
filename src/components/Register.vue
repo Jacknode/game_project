@@ -4,64 +4,64 @@
       <div class="content">
         <div class="header">
           <span class="headerLeft">注册账户</span>
-          <a href="javascript:;">登录</a>
+          <router-link to="Login">登录</router-link>
           <span class="headerRight">我已注册, 现在就</span>
         </div>
         <div class="footer">
-          <form action="">
+            <table>
             <tbody>
              <tr>
               <td class="formLeft">
                 用户名
-                <span style="color:red">*</span>
+                <!--<span style="color:red">*</span>-->
               </td>
               <td class="formRight">
-                <input type="text" placeholder="请输入用户名">
+                <input type="text" v-model="addOptions.data.gm_ui_Name">
               </td>
             </tr>
              <tr>
                <td class="formLeft">
                  密码
-                 <span style="color:red">*</span>
+                 <!--<span style="color:red">*</span>-->
                </td>
                <td class="formRight">
-                 <input type="text" placeholder="请输入不少于8位的密码">
+                 <input type="text" v-model="addOptions.data.gm_ui_Password">
                </td>
              </tr>
              <tr>
                <td class="formLeft">
                  确认密码
-                 <span style="color:red">*</span>
+                 <!--<span style="color:red">*</span>-->
                </td>
                <td class="formRight">
-                 <input type="text" placeholder="请再次输入不少于8位的密码">
-               </td>
-             </tr>
-             <tr>
-               <td class="formLeft">
-                 真实姓名
-                 <span style="color:red">*</span>
-               </td>
-               <td class="formRight">
-                 <input type="text" placeholder="请输入您的真实姓名">
+                 <input type="text" v-model="addOptions.data.isPassword">
                </td>
              </tr>
              <tr>
                <td class="formLeft">
                  手机号码
-                 <span style="color:red">*</span>
+                 <!--<span style="color:red">*</span>-->
                </td>
                <td class="formRight">
-                 <input type="text" placeholder="请输入您的手机号">
+                 <input type="text" v-model="addOptions.data.gm_ui_Phone">
+               </td>
+             </tr>
+             <tr>
+               <td class="formLeft">
+                 邮箱
+                 <!--<span style="color:red">*</span>-->
+               </td>
+               <td class="formRight">
+                 <input type="text" v-model="addOptions.data.gm_ui_Email">
                </td>
              </tr>
              <tr>
                <td class="formLeft">
                  身份证号
-                 <span style="color:red">*</span>
+                 <!--<span style="color:red">*</span>-->
                </td>
                <td class="formRight">
-                 <input type="text" placeholder="请输入18位身份证号">
+                 <input type="text"  v-model="addOptions.data.gm_ui_CertNo">
                </td>
              </tr>
              <tr>
@@ -70,36 +70,69 @@
                <td class="formRight">
                  <input class="tdRadio" type="radio">
                  <span>我已仔细阅读并接受</span>
-                 <a href="javascript:;">《用户使用协议》</a>
+                 <router-link to="/Comment/UserAgr">《用户使用协议》</router-link>
                </td>
              </tr>
              <tr>
                <td class="formLeft">
                </td>
                <td class="formRight">
-                 <input class="register" type="button" value="注册">
+                 <input class="register" type="button" value="注册" @click="register">
                </td>
              </tr>
             </tbody>
-          </form>
+            </table>
         </div>
       </div>
     </div>
   </div>
 </template>
 <script>
-  import {getNewStr} from '@/assets/js/public'
+  import {postPromise,getNewStr} from '@/assets/js/public'
   export default {
     name:'',
     data(){
       return {
-
+        addOptions: {
+          "loginUserID": "huileyou",
+          "loginUserPass": "123",
+          "operateUserID": "",
+          "operateUserName": "",
+          "pcName": "",
+          "data": {
+            isPassword:'',
+            "gm_ui_Name": "",//用户名
+            "gm_ui_Password": "",//密码
+            "gm_ui_Phone": "",//手机号
+            "gm_ui_CertNo": "",//身份证号
+            "gm_ui_Email": "",//邮箱
+          }
+        }
       }
     },
-    methods:[
-//      userLogin(){},
-    ],
-
+    methods:{
+      register(){
+        if(this.addOptions.data.isPassword!==this.addOptions.data.gm_ui_Password){
+          alert('两次密码不一致')
+          return
+        }
+        delete this.addOptions.data.isPassword
+        postPromise(getNewStr+'/GmUserInfo/Insert',this.addOptions)
+          .then(data=>{
+            var data = JSON.parse(data);
+            if(Number(data.resultcode)==200){
+              alert(data.resultcontent)
+              const {href} = this.$router.resolve({
+                name: 'Login',
+              });
+              window.open(href, '_blank')
+//              this.$router.push({name:'Login'})
+            }else {
+              alert(data.resultcontent)
+            }
+          })
+      }
+    }
   }
 </script>
 <style>

@@ -55,16 +55,20 @@
 
           </span>
         </div>
-        <div class="recommendGame">
-          <strong>相关文章</strong>
-          <a href="JavaScript:;"> + 防赌博说明</a>
-          <a href="JavaScript:;"> + 用户使用协议</a>
-          <a href="JavaScript:;"> + 家长监护</a>
-          <a href="JavaScript:;"> + 防沉迷说明</a>
-          <span>猜你喜欢</span>
-          <img width="122" height="92" src="http://uus-img7.android.d.cn/content_pic/201806/behpic/icon/23/1-82023/icon-1529032764251.png" alt="">
-          <a href="javascript:;">神游记</a>
-        </div>
+        <!--<div class="recommendGame">-->
+          <!--<strong>相关文章</strong>-->
+          <!--<li v-for="item,index in urlList" @click="change(index)">-->
+            <!--<router-link :to="item.to">{{item.name}}</router-link>-->
+          <!--</li>-->
+          <!--&lt;!&ndash;<router-link to="/Comment/ParentsCare">+ 首页</router-link>&ndash;&gt;-->
+          <!--&lt;!&ndash;<router-link to="/Comment/CompanyIntroduce">+ 公司介绍</router-link>&ndash;&gt;-->
+          <!--&lt;!&ndash;<router-link to="/Comment/GameDetails">+ 游戏下载</router-link>&ndash;&gt;-->
+          <!--&lt;!&ndash;<router-link to="/Comment/ParentsCare">+ 家长监护</router-link>&ndash;&gt;-->
+          <!--&lt;!&ndash;<router-link to="/Comment/ParentsCare">+ 联系我们</router-link>&ndash;&gt;-->
+          <!--<span>猜你喜欢</span>-->
+          <!--<img width="122" height="92" src="http://uus-img7.android.d.cn/content_pic/201806/behpic/icon/23/1-82023/icon-1529032764251.png" alt="">-->
+          <!--<a href="javascript:;">神游记</a>-->
+        <!--</div>-->
       </div>
     </div>
   </div>
@@ -73,9 +77,41 @@
 
   export default {
     data() {
-      return {}
+      return {
+        urlList:[
+          {
+            name:'首页',
+            to:'/'
+          },
+          {
+            name:'公司介绍',
+            to:'/Comment/CompanyIntroduce'
+          },
+          {
+            name:'游戏下载',
+            to:'/Comment/GameDetails'
+          },
+          {
+            name:'用户使用协议',
+            to:'/Comment/UserAgr'
+          },
+          {
+            name:'家长监护',
+            to:'/Comment/ParentsCare'
+          }
+        ],
+        n:0,
+      }
     },
     methods: {
+      toTab(index){
+        let commentNavNum = JSON.parse(sessionStorage.getItem('indexNumber'));
+        sessionStorage.setItem('commentNavNum', index);
+        this.n = JSON.parse(sessionStorage.getItem('commentNavNum'));
+      },
+      change(index){
+        this.toTab(index)
+      },
       initData() {
       },
       search() {

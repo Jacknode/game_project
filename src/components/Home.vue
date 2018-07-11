@@ -7,7 +7,8 @@
       </div>
       <div class="gameCon">
         <div class="gameC">
-          <strong>神游记</strong>
+          <!--<strong >神游记</strong>-->
+          <a href="https://qiankevideo.oss-cn-hangzhou.aliyuncs.com/syj_1529032764249.apk">神游记</a>
           <div class="aboutG">
             <span>游戏说明</span>
             <em>|</em>
@@ -51,7 +52,7 @@
     padding: 20px 20px 0 25px;
     background-color: #f9f9f9;
   }
-  .gameC > strong {
+  .gameC > a {
     color: #0baefd;
     font: 16px/34px "微软雅黑";
   }
