@@ -20,9 +20,17 @@ export default new Router({
             name: 'Home'
           },
           {
+            path: 'ParentsCare',
+            components: {
+              default: (resolve) => require(['@/components/Comment'], resolve),
+              User: (resolve) => require(['@/components/ParentsCare'], resolve),
+            },
+            name: 'ParentsCare'
+          },
+          {
             path: 'gameDetails',
             components: {
-              default: (resolve) => require(['@/components/GameDetails'], resolve),
+              default: (resolve) => require(['@/components/Comment'], resolve),
               User: (resolve) => require(['@/components/GameDetails'], resolve),
             },
             name: 'GameDetails'
@@ -30,7 +38,7 @@ export default new Router({
           {
             path: 'companyIntroduce',
             components: {
-              default: (resolve) => require(['@/components/CompanyIntroduce'], resolve),
+              default: (resolve) => require(['@/components/Comment'], resolve),
               User: (resolve) => require(['@/components/CompanyIntroduce'], resolve),
             },
             name: 'CompanyIntroduce'

@@ -5,7 +5,14 @@
         <div class="headBox">
           <ul class="navBox">
             <li><a href="javascript:;"><img src="" alt=""></a></li>
-            <li v-for="item in headerNavList"><a href="javascript:;">{{item.name}}</a></li>
+            <li><router-link to="/Comment/ParentsCare">首页</router-link></li>
+            <li><router-link to="/Comment/CompanyIntroduce">公司介绍</router-link></li>
+            <li><router-link to="/Comment/GameDetails">游戏下载</router-link></li>
+            <li><router-link to="/Comment/ParentsCare">充值中心</router-link></li>
+            <li><router-link to="/Comment/ParentsCare">用户使用协议</router-link></li>
+            <li><router-link to="/Comment/ParentsCare">家长监护</router-link></li>
+            <li><router-link to="/Comment/ParentsCare">联系我们</router-link></li>
+            <!--<li v-for="item in headerNavList"><a href="javascript:;">{{item.name}}</a></li>-->
             <li>本游戏适合18岁 (含) 以上玩家进入</li>
           </ul>
           <div class="loginBox">
