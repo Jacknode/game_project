@@ -82,6 +82,16 @@ export default new Router({
         component: (reslove) => require(['@/components/404'], reslove)
       },
       {
+        path: '/Login',
+        name: 'Login',
+        component: (reslove) => require(['@/components/Login'], reslove)
+      },
+      {
+        path: '/Register',
+        name: 'Register',
+        component: (reslove) => require(['@/components/Register'], reslove)
+      },
+      {
         path: '*',
         redirect: '/404',
         hidden: true
