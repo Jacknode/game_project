@@ -135,6 +135,9 @@
       },
       change(index){
         this.toTab(index)
+        setTimeout(()=>{
+          window.location.reload()
+        },100)
       },
       menu() {
         this.scroll = document.documentElement.scrollTop || document.body.scrollTop;

@@ -13,10 +13,15 @@
         </div>
         <div class="recommendGame">
           <strong>相关文章</strong>
-          <router-link to="/Comment/GameDetails">+ 游戏下载</router-link>
-          <!--<li><router-link to="/Comment/ParentsCare">充值中心</router-link></li>-->
-          <router-link to="/Comment/UserAgr">+ 用户使用协议</router-link>
-          <router-link to="/Comment/ParentsCare">+ 家长监护</router-link>
+          <ul>
+            <li v-for="item,index in urlList" @click="change(index)" :class="{active:index==n}">
+              <router-link :to="item.to">> {{item.name}}</router-link>
+            </li>
+          </ul>
+          <!--<router-link to="/Comment/GameDetails">+ 游戏下载</router-link>-->
+          <!--&lt;!&ndash;<li><router-link to="/Comment/ParentsCare">充值中心</router-link></li>&ndash;&gt;-->
+          <!--<router-link to="/Comment/UserAgr">+ 用户使用协议</router-link>-->
+          <!--<router-link to="/Comment/ParentsCare">+ 家长监护</router-link>-->
           <!--<a href="JavaScript:;"> + 纠纷处理</a>-->
           <!--<a href="JavaScript:;"> + 防沉迷说明</a>-->
           <!--<a href="JavaScript:;"> + 公司介绍</a>-->
@@ -33,9 +38,44 @@
 
   export default {
     data() {
-      return {}
+      return {
+        urlList:[
+          {
+            name:'首页',
+            to:'/'
+          },
+          {
+            name:'公司介绍',
+            to:'/Comment/CompanyIntroduce'
+          },
+          {
+            name:'游戏下载',
+            to:'/Comment/GameDetails'
+          },
+          {
+            name:'用户使用协议',
+            to:'/Comment/UserAgr'
+          },
+          {
+            name:'家长监护',
+            to:'/Comment/ParentsCare'
+          }
+        ],
+        n:0
+      }
     },
     methods: {
+      toTab(index){
+        let commentNavNum = JSON.parse(sessionStorage.getItem('indexNumber'));
+        sessionStorage.setItem('commentNavNum', index);
+        this.n = JSON.parse(sessionStorage.getItem('commentNavNum'));
+      },
+      change(index){
+        this.toTab(index)
+        setTimeout(()=>{
+          window.location.reload()
+        },100)
+      },
       initData() {
       },
       search() {
@@ -142,11 +182,15 @@
     padding: 0 5px;
   }
 
-  .recommendGame > a {
+  .recommendGame ul li {
     color: #999;
     overflow: hidden;
     height: 22px;
+    margin: 5px 0 5px 15px;
     display: block;
+  }
+  .recommendGame ul li a:hover{
+    color: red;
   }
 
   .recommendGame > span {

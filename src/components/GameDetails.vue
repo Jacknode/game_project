@@ -41,11 +41,16 @@
         </div>
         <div class="recommendGame">
           <strong>相关文章</strong>
-          <router-link to="/Comment/ParentsCare">+ 首页</router-link>
-          <router-link to="/Comment/CompanyIntroduce">+ 公司介绍</router-link>
-          <!--<li><router-link to="/Comment/ParentsCare">充值中心</router-link></li>-->
-          <router-link to="/Comment/UserAgr">+ 用户使用协议</router-link>
-          <router-link to="/Comment/ParentsCare">+ 家长监护</router-link>
+          <ul>
+            <li v-for="item,index in urlList" @click="change(index)" :class="{active:index==n}">
+              <router-link :to="item.to">> {{item.name}}</router-link>
+            </li>
+          </ul>
+          <!--<router-link to="/Comment/ParentsCare">+ 首页</router-link>-->
+          <!--<router-link to="/Comment/CompanyIntroduce">+ 公司介绍</router-link>-->
+          <!--&lt;!&ndash;<li><router-link to="/Comment/ParentsCare">充值中心</router-link></li>&ndash;&gt;-->
+          <!--<router-link to="/Comment/UserAgr">+ 用户使用协议</router-link>-->
+          <!--<router-link to="/Comment/ParentsCare">+ 家长监护</router-link>-->
           <span>猜你喜欢</span>
           <img width="122" height="92" src="http://uus-img7.android.d.cn/content_pic/201806/behpic/icon/23/1-82023/icon-1529032764251.png" alt="">
           <a href="javascript:;">神游记</a>
@@ -58,9 +63,44 @@
 
   export default {
     data() {
-      return {}
+      return {
+        urlList:[
+          {
+            name:'首页',
+            to:'/'
+          },
+          {
+            name:'公司介绍',
+            to:'/Comment/CompanyIntroduce'
+          },
+          {
+            name:'游戏下载',
+            to:'/Comment/GameDetails'
+          },
+          {
+            name:'用户使用协议',
+            to:'/Comment/UserAgr'
+          },
+          {
+            name:'家长监护',
+            to:'/Comment/ParentsCare'
+          }
+        ],
+        n:0
+      }
     },
     methods: {
+      toTab(index){
+        let commentNavNum = JSON.parse(sessionStorage.getItem('indexNumber'));
+        sessionStorage.setItem('commentNavNum', index);
+        this.n = JSON.parse(sessionStorage.getItem('commentNavNum'));
+      },
+      change(index){
+        this.toTab(index)
+        setTimeout(()=>{
+          window.location.reload()
+        },100)
+      },
       initData() {
       },
       search() {
@@ -154,6 +194,16 @@
   .recommendGame {
     float: right;
     width: 245px;
+  }
+  .recommendGame ul li {
+    color: #999;
+    overflow: hidden;
+    height: 22px;
+    margin: 5px 0 5px 15px;
+    display: block;
+  }
+  .recommendGame ul li a:hover{
+    color: red;
   }
 
   .recommendGame > strong {
