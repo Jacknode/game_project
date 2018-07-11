@@ -1,7 +1,7 @@
 <template>
   <div>
     <div id="wrap">
-      <img src="../assets/img/homeImage.jpg" width="100%">
+      <img src="../assets/img/bg_01.jpg" width="100%" height="600px">
       <div class="title">
         <strong>游戏下载</strong>
       </div>
