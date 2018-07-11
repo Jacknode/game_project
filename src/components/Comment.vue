@@ -54,7 +54,11 @@
             <p>9:00~15:00</p>
             <a href="javascript:;" target="_blank" class="kefu">QQ在线客服</a>
           </div>
-          <div class="footerContRight"></div>
+          <div class="footerContRight">
+            <img src="../assets/img/erweima.jpg" alt="" style="width:125px;height:125px;">
+            <span>扫描添加</span>
+            <span>公众微信平台</span>
+          </div>
         </div>
       </div>
     </footer>
@@ -238,7 +242,7 @@
     font-size: 30px;
     color: #5d5c5a;
     line-height: 40px;
-    padding-bottom:;: 10px;
+    padding-bottom: 10px;
   }
   .footerContMiddle>p{
     font-size: 12px;
@@ -253,5 +257,25 @@
     color: #fff;
     line-height: 30px;
     text-align: center;
+  }
+  .footerContRight{
+    float: right;
+    margin-right: 70px;
+    width: 163px;
+    height:207px;
+    background: #3d4144;
+    text-align: center;
+  }
+  .footerContRight>img{
+    margin-top:20px;
+  }
+  .footerContRight>span{
+    margin-top:5px;
+    display: block;
+    text-align: center;
+    height: 18px;
+    line-height: 18px;
+    font-size: 12px;
+    color: #fff;
   }
 </style>
