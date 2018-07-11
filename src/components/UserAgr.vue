@@ -55,20 +55,20 @@
 
           </span>
         </div>
-        <!--<div class="recommendGame">-->
-          <!--<strong>相关文章</strong>-->
+        <div class="recommendGame">
+          <strong>相关文章</strong>
           <!--<li v-for="item,index in urlList" @click="change(index)">-->
             <!--<router-link :to="item.to">{{item.name}}</router-link>-->
           <!--</li>-->
-          <!--&lt;!&ndash;<router-link to="/Comment/ParentsCare">+ 首页</router-link>&ndash;&gt;-->
-          <!--&lt;!&ndash;<router-link to="/Comment/CompanyIntroduce">+ 公司介绍</router-link>&ndash;&gt;-->
-          <!--&lt;!&ndash;<router-link to="/Comment/GameDetails">+ 游戏下载</router-link>&ndash;&gt;-->
-          <!--&lt;!&ndash;<router-link to="/Comment/ParentsCare">+ 家长监护</router-link>&ndash;&gt;-->
-          <!--&lt;!&ndash;<router-link to="/Comment/ParentsCare">+ 联系我们</router-link>&ndash;&gt;-->
-          <!--<span>猜你喜欢</span>-->
-          <!--<img width="122" height="92" src="http://uus-img7.android.d.cn/content_pic/201806/behpic/icon/23/1-82023/icon-1529032764251.png" alt="">-->
-          <!--<a href="javascript:;">神游记</a>-->
-        <!--</div>-->
+          <router-link to="/Comment/ParentsCare">+ 首页</router-link>
+          <router-link to="/Comment/CompanyIntroduce">+ 公司介绍</router-link>
+          <router-link to="/Comment/GameDetails">+ 游戏下载</router-link>
+          <router-link to="/Comment/ParentsCare">+ 家长监护</router-link>
+          <router-link to="/Comment/ParentsCare">+ 联系我们</router-link>
+          <span>猜你喜欢</span>
+          <img width="122" height="92" src="http://uus-img7.android.d.cn/content_pic/201806/behpic/icon/23/1-82023/icon-1529032764251.png" alt="">
+          <a href="javascript:;">神游记</a>
+        </div>
       </div>
     </div>
   </div>
