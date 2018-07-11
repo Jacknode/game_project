@@ -34,6 +34,30 @@ export default new Router({
               User: (resolve) => require(['@/components/CompanyIntroduce'], resolve),
             },
             name: 'CompanyIntroduce'
+          },
+          {
+            path: 'preventAddiction',
+            components: {
+              default: (resolve) => require(['@/components/PreventAddiction'], resolve),
+              User: (resolve) => require(['@/components/PreventAddiction'], resolve),
+            },
+            name: 'PreventAddiction'
+          },
+          {
+            path: 'userAgr',
+            components: {
+              default: (resolve) => require(['@/components/UserAgr'], resolve),
+              User: (resolve) => require(['@/components/UserAgr'], resolve),
+            },
+            name: 'UserAgr'
+          },
+          {
+            path: 'antiGambling',
+            components: {
+              default: (resolve) => require(['@/components/AntiGambling'], resolve),
+              User: (resolve) => require(['@/components/AntiGambling'], resolve),
+            },
+            name: 'AntiGambling'
           }
         ]
       },

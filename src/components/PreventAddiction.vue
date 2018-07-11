@@ -1,22 +1,22 @@
 <template>
   <div>
     <div id="warp">
-      <strong>当前位置： 首页 >> 公司介绍</strong>
+      <strong>当前位置： 首页 >> 防沉迷说明</strong>
       <div class="clearfix">
         <div class="aboutGame">
-          <strong class="title">公司介绍</strong>
-          <span>文章分类：游戏说明 | 网站编辑：| 发表时间：2018-03-29 | </span>
-          <p>浙江龙公子旅游有限公司成立于2018年，是一家专注于提供最领先的移动游戏和娱乐产品的开发商、运营商和发行商，致力于为全球移动用户提供更好玩、更易用的移动游戏娱乐产品和在线服务，开拓全新的无线互动娱乐生活方式。</p>
-          <p>公司创始人团队由一批业界资深的专业人士组成，拥有丰富的手机游戏、PC网络游戏开发和运营经验。</p>
-          <p>公司从创立之初，就将打造顶级制作团队和精品游戏研发作为企业发展的核心和重点。围绕着创始人团队，龙公子汇聚了一批喜爱游戏，真正懂得游戏，愿意为创作高品质游戏全心投入的年轻人，并已成长为企业的中坚力量。</p>
-          <p>浙江龙公子旅游有限公司将以“成为全球领先的移动网络游戏和娱乐产品的开发商和运营商，打造中国手机网络游戏的国际品牌”目标为指引，努力推陈出新，为全球游戏玩家奉献更多更好的原创手机网络游戏精品！</p>
+          <strong class="title">防沉迷说明</strong>
+          <span>文章分类：游戏说明 | 网站编辑：| 发表时间：2018-04-03 | </span>
+          <p>保护未成年人身心健康，未满18岁的用户将受到防沉迷系统的限制：</p>
+          <p>游戏过程，会提示您的累计在线时间。</p>
+          <p>累计游戏时间超过3小时，游戏收益（经验，金钱）减半。</p>
+          <p>累计游戏时间超过5小时，游戏收益为0。</p>
         </div>
         <div class="recommendGame">
           <strong>相关文章</strong>
-          <a href="JavaScript:;"> + 纠纷处理</a>
-          <a href="JavaScript:;"> + 防沉迷说明</a>
           <a href="JavaScript:;"> + 公司介绍</a>
-          <a href="JavaScript:;"> + 家长监护</a>
+          <a href="JavaScript:;"> + 用户使用协议</a>
+          <a href="JavaScript:;"> + 防赌博说明</a>
+          <a href="JavaScript:;"> + 纠纷处理</a>
           <span>猜你喜欢</span>
           <img width="122" height="92" src="http://uus-img7.android.d.cn/content_pic/201806/behpic/icon/23/1-82023/icon-1529032764251.png" alt="">
           <a href="javascript:;">神游记</a>
@@ -73,6 +73,7 @@
     display: block;
     font: 12px/2 "微软雅黑";
     color: #999;
+    margin-bottom: 30px;
   }
 
   .gameInfo {
