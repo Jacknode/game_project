@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="container">
-      <form action="" method="post">
+      <form action="" method="post" @submit.prevent="submit">
         <table class="loginTable">
           <tbody>
           <tr>
@@ -27,7 +27,7 @@
           <tr>
             <td class="tdLeft"></td>
             <td class="tdRight">
-              <input class="loginButton" type="button" value="登录" onclick="userLogin()">
+              <input class="loginButton" type="submit" value="登录">
               <span></span>
             </td>
           </tr>
@@ -47,12 +47,29 @@
     name:'',
     data(){
       return {
-
+        inputtext:{}
       }
     },
-    methods:[
-//      userLogin(){},
-    ],
+    methods:{
+      submit:function () {
+        let loginOption = {
+          "loginUserID": "huileyou",
+          "loginUserPass": "123",
+          "operateUserID": "",
+          "operateUserName": "",
+          "pcName": "",
+          "gm_UserKey": "",//用户名或手机号或邮箱
+          "gm_ui_Password": "",//用密码
+        };
+//        this.$store.dispatch('initStoreProductData', loginOption)
+      },
+
+
+
+
+
+       },
+
 
   }
 </script>
