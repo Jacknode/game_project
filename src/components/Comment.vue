@@ -41,17 +41,20 @@
       <div class="footerTop">
         <div class="footerNav">
           <ul>
-            <li><a href="javascript:;">首页</a></li>
-            <li><a href="javascript:;">公司介绍</a></li>
-            <li><a href="javascript:;">游戏下载</a></li>
-            <li><a href="javascript:;">充值中心</a></li>
-            <li><a href="javascript:;">纠纷处理</a></li>
-            <li><a href="javascript:;">用户使用协议</a></li>
-            <li><a href="javascript:;">家长监护</a></li>
-            <li><a href="javascript:;">联系我们</a></li>
+            <li v-for="item,index in urlList" @click="change(index)" :class="{active:index==n}">
+              <router-link :to="item.to">{{item.name}}</router-link>
+            </li>
+            <!--<li><a href="javascript:;">首页</a></li>-->
+            <!--<li><a href="javascript:;">公司介绍</a></li>-->
+            <!--<li><a href="javascript:;">游戏下载</a></li>-->
+            <!--<li><a href="javascript:;">充值中心</a></li>-->
+            <!--<li><a href="javascript:;">纠纷处理</a></li>-->
+            <!--<li><a href="javascript:;">用户使用协议</a></li>-->
+            <!--<li><a href="javascript:;">家长监护</a></li>-->
+            <!--<li><a href="javascript:;">联系我们</a></li>-->
           </ul>
           <div class="rightGo">
-            <a href="javascript:;">返回顶部</a>
+            <a href="javascript:;" @click="goTop">返回顶部</a>
           </div>
         </div>
       </div>
@@ -132,7 +135,25 @@
       },
       change(index){
         this.toTab(index)
-      }
+      },
+      menu() {
+        this.scroll = document.documentElement.scrollTop || document.body.scrollTop;
+      },
+      //返回顶部
+      goTop(){
+        if($(document).scrollTop()>300){
+          let timer = setInterval(()=>{
+            $(document).scrollTop( $(document).scrollTop()-100)
+            if($(document).scrollTop()<=0){
+              clearInterval(timer)
+            }
+          },10)
+          this.isTop = false
+        }
+      },
+    },
+    mounted(){
+      window.addEventListener('scroll', this.menu)
     }
 	}
 </script>
