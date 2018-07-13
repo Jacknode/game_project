@@ -2,10 +2,10 @@
 	<div>
     <div>
       <header>
-        <div class="headBox">
+        <div class="headBox clearfix">
           <ul class="navBox">
 
-            <li><a href="javascript:;"><img src="http://www.lgz18.com/attachment/images/1/2018/03/VeQx4NqNUAhY2beqHn4ENNwNybnZSa.png" alt="" width="100" height="100"></a></li>
+            <li style="margin: 30px 80px 0 0;"><a href="javascript:;"><img src="../assets/img/icon.png" alt="" width="152" height="65"></a></li>
             <li v-for="item,index in urlList" @click="change(index)" :class="{active:index==n}">
               <router-link :to="item.to">{{item.name}}</router-link>
             </li>
@@ -17,11 +17,10 @@
             <!--<li><router-link to="/Comment/ParentsCare">家长监护</router-link></li>-->
             <!--<li><router-link to="/Comment/ParentsCare">联系我们</router-link></li>-->
             <!--<li v-for="item in headerNavList"><a href="javascript:;">{{item.name}}</a></li>-->
-            <li>本游戏适合18岁 (含) 以上玩家进入</li>
           </ul>
           <div class="loginBox">
             <ul>
-              <li class="login">
+              <li class="register">
                 <router-link to="/Login">登录</router-link>
                 <!--<a href="javascript:;">登录</a>-->
               </li>
@@ -65,8 +64,8 @@
               <a href="javascript:;" target="_blank" textvalue="防赌博说明 ">防赌博说明 </a> | <a href="javascript:;" target="_blank" textvalue="防沉迷说明">防沉迷说明</a></p>
             <p>健康游戏忠告：抵制不良游戏，拒绝盗版游戏，注意自我保护，谨防受骗上当。</p>
             <p>适度游戏益脑，沉迷游戏伤身。合理安排时间，享受健康生活。</p>
-            <p>2018@浙江龙公子旅游有限公司 版权所有，浙江龙公子旅游有限公司</p>
-            <p>浙ICP备18008465号-1   联系方式:0576-88224545</p>
+            <p>2018@浙江小飞象网络科技有限公司 版权所有，浙江小飞象网络科技有限公司</p>
+            <p>浙ICP备17051641号-1   联系方式:0576-88227789</p>
           </div>
           <div class="footerContMiddle">
             <strong>0576-88224545</strong>
@@ -163,11 +162,11 @@
 <style type="text/css">
   .navBox{
     /*background-color: red;*/
-    width: 1200px;
     margin:60px auto 0;
     height: 30px;
     /*padding-left: 60px;*/
     position: relative;
+    float: left;
   }
   .navBox>li{
     /*background-color: violet;*/
@@ -183,6 +182,7 @@
   }
   .navBox>li.active a{
     color: #00aeff;
+    border-bottom: 1px solid #00aeff;
   }
   .navBox>li>a:hover{
     color: #00aeff;
@@ -210,6 +210,7 @@
     /*background-color: royalblue;*/
     float: right;
     margin-right: 150px;
+    margin-top: 60px;
   }
   .loginBox>ul>li{
     float: left;
@@ -263,14 +264,14 @@
   }
   .footerNav>ul{
     background-color: red;
+    margin-left: 150px;
   }
   .footerNav>ul>li{
     float: left;
-    margin-right: 30px;
   }
   .footerNav>ul>li>a{
+    padding: 0 30px;
     margin-top:20px;
-    width: 84px;
     height: 16px;
     display: block;
     float: left;

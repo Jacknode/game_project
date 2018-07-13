@@ -1,7 +1,13 @@
 <template>
   <div>
     <div id="wrap">
-      <img src="../assets/img/bg_01.jpg" width="100%" height="600px">
+      <div class="imgBox">
+        <img src="http://img1.ali213.net/webgamepic/ztpic_b/2013-07-15/137385541241370.jpg" width="100%"
+             height="400">
+        <img src="http://images.enet.com.cn/egames/articleimage/201304/20130415011149246.jpg" width="100%" height="400">
+        <img src="http://img5.imgtn.bdimg.com/it/u=3633531759,2636903706&fm=27&gp=0.jpg" width="100%" height="400">
+        <img src="http://img4.imgtn.bdimg.com/it/u=3347714591,701277893&fm=27&gp=0.jpg" width="100%" height="400">
+      </div>
       <div class="title">
         <strong>游戏下载</strong>
       </div>
@@ -26,6 +32,9 @@
 
 </script>
 <style scoped>
+  #wrap {
+    overflow: hidden;
+  }
   .title {
     padding-top: 71px;
     text-align: center;
@@ -52,12 +61,13 @@
     padding: 20px 20px 0 25px;
     background-color: #f9f9f9;
   }
+
   .gameC > a {
     color: #0baefd;
     font: 16px/34px "微软雅黑";
   }
 
-  .aboutG{
+  .aboutG {
     font: 12px/31px "微软雅黑";
     color: #868686;
     margin: 10px 0;
@@ -67,4 +77,44 @@
     font: 14px/21px "微软雅黑";
     color: #4d4d4d;
   }
+
+  .imgBox {
+    width: 400%;
+    height:400px;
+    animation: myfirst 10s infinite;
+  }
+
+  .imgBox > img {
+    width: 25%;
+    float: left;
+  }
+
+  @keyframes myfirst
+  {
+    20% {
+      transform: translateX(0);
+    }
+    25% {
+      transform: translateX(-25%);
+    }
+    45% {
+      transform: translateX(-25%);
+    }
+    50% {
+      transform: translateX(-50%);
+    }
+    70% {
+      transform: translateX(-50%);
+    }
+    75% {
+      transform: translateX(-75%);
+    }
+    95% {
+      transform: translateX(-75%);
+    }
+    100% {
+      transform: translateX(0);
+    }
+  }
+
 </style>
