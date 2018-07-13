@@ -31,7 +31,7 @@
           </div>
         </div>
       </header>
-      <hr style="height:10px;width:100%;border:none;border-top:10px groove skyblue;">
+      <!--<hr style="height:10px;width:100%;border:none;border-top:10px groove skyblue;">-->
     </div>
       <keep-alive>
         <router-view name="User"></router-view>
@@ -61,14 +61,14 @@
         <div class="footerBotCont">
           <div class="footerContLeft">
             <p style="text-align: center;">
-              <a href="javascript:;" target="_blank" textvalue="防赌博说明 ">防赌博说明 </a> | <a href="javascript:;" target="_blank" textvalue="防沉迷说明">防沉迷说明</a></p>
+              <a href="javascript:;" target="_blank" textvalue="防赌博说明 " @click="AntiGambling">防赌博说明 </a> | <a href="javascript:;" target="_blank" textvalue="防沉迷说明" @click="PreventAddiction">防沉迷说明</a></p>
             <p>健康游戏忠告：抵制不良游戏，拒绝盗版游戏，注意自我保护，谨防受骗上当。</p>
             <p>适度游戏益脑，沉迷游戏伤身。合理安排时间，享受健康生活。</p>
             <p>2018@浙江小飞象网络科技有限公司 版权所有，浙江小飞象网络科技有限公司</p>
             <p>浙ICP备17051641号-1   联系方式:0576-88227789</p>
           </div>
           <div class="footerContMiddle">
-            <strong>0576-88224545</strong>
+            <strong>0576-88227789</strong>
             <p>9:00~15:00</p>
             <a href="javascript:;" target="_blank" class="kefu">QQ在线客服</a>
           </div>
@@ -127,6 +127,12 @@
       this.n = JSON.parse(sessionStorage.getItem('commentNavNum'));
     },
     methods:{
+      AntiGambling(){
+        this.$router.push({name:'AntiGambling'})
+      },
+      PreventAddiction(){
+        this.$router.push({name:'PreventAddiction'})
+      },
       toTab(index){
         let commentNavNum = JSON.parse(sessionStorage.getItem('indexNumber'));
         sessionStorage.setItem('commentNavNum', index);

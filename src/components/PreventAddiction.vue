@@ -13,10 +13,11 @@
         </div>
         <div class="recommendGame">
           <strong>相关文章</strong>
-          <a href="JavaScript:;"> + 公司介绍</a>
-          <a href="JavaScript:;"> + 用户使用协议</a>
-          <a href="JavaScript:;"> + 防赌博说明</a>
-          <a href="JavaScript:;"> + 纠纷处理</a>
+          <ul>
+            <li v-for="item,index in urlList" @click="change(index)" :class="{active:index==n}">
+              <router-link :to="item.to">> {{item.name}}</router-link>
+            </li>
+          </ul>
           <span>猜你喜欢</span>
           <img width="122" height="92" src="http://uus-img7.android.d.cn/content_pic/201806/behpic/icon/23/1-82023/icon-1529032764251.png" alt="">
           <a href="javascript:;">神游记</a>
@@ -29,9 +30,44 @@
 
   export default {
     data() {
-      return {}
+      return {
+        urlList:[
+          {
+            name:'首页',
+            to:'/'
+          },
+          {
+            name:'公司介绍',
+            to:'/Comment/CompanyIntroduce'
+          },
+          {
+            name:'游戏下载',
+            to:'/Comment/GameDetails'
+          },
+          {
+            name:'用户使用协议',
+            to:'/Comment/UserAgr'
+          },
+          {
+            name:'家长监护',
+            to:'/Comment/ParentsCare'
+          }
+        ],
+        n:0
+      }
     },
     methods: {
+      toTab(index){
+        let commentNavNum = JSON.parse(sessionStorage.getItem('indexNumber'));
+        sessionStorage.setItem('commentNavNum', index);
+        this.n = JSON.parse(sessionStorage.getItem('commentNavNum'));
+      },
+      change(index){
+        this.toTab(index)
+        setTimeout(()=>{
+          window.location.reload()
+        },100)
+      },
       initData() {
       },
       search() {
@@ -41,6 +77,16 @@
   }
 </script>
 <style scoped>
+  .recommendGame ul li {
+    color: #999;
+    overflow: hidden;
+    height: 22px;
+    margin: 5px 0 5px 15px;
+    display: block;
+  }
+  .recommendGame ul li a:hover{
+    color: red;
+  }
   #warp {
     padding: 70px 0 100px 0;
     width: 1200px;

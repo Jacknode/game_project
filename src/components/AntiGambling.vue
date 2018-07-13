@@ -64,6 +64,7 @@
             to:'/Comment/ParentsCare'
           }
         ],
+        n:0
       }
     },
     methods: {
@@ -74,6 +75,9 @@
       },
       change(index){
         this.toTab(index)
+        setTimeout(()=>{
+          window.location.reload()
+        },100)
       },
       initData() {
       },

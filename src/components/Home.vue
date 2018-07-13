@@ -2,17 +2,16 @@
   <div>
     <div id="wrap">
       <div class="imgBox">
-        <img src="http://img1.ali213.net/webgamepic/ztpic_b/2013-07-15/137385541241370.jpg" width="100%"
-             height="400">
-        <img src="http://images.enet.com.cn/egames/articleimage/201304/20130415011149246.jpg" width="100%" height="400">
-        <img src="http://img5.imgtn.bdimg.com/it/u=3633531759,2636903706&fm=27&gp=0.jpg" width="100%" height="400">
-        <img src="http://img4.imgtn.bdimg.com/it/u=3347714591,701277893&fm=27&gp=0.jpg" width="100%" height="400">
+        <img src="../assets/img/timg (16).jpg" width="100%" height="500"/>
+        <img src="../assets/img/timg (42).jpg" width="100%" height="500"/>
+        <!--<img src="../assets/img/lun_03.jpg" width="100%" height="500">-->
+        <!--<img src="../assets/img/lun_04.jpg" width="100%" height="500">-->
       </div>
       <div class="title">
         <strong>游戏下载</strong>
       </div>
       <div class="gameCon">
-        <div class="gameC">
+        <div class="gameC" @click="toGameDowload">
           <!--<strong >神游记</strong>-->
           <a href="https://qiankevideo.oss-cn-hangzhou.aliyuncs.com/syj_1529032764249.apk">神游记</a>
           <div class="aboutG">
@@ -29,6 +28,28 @@
   </div>
 </template>
 <script>
+
+  export default{
+    name:'',
+    data(){
+      return {
+
+      }
+    },
+    methods:{
+      toTab(index){
+        let commentNavNum = JSON.parse(sessionStorage.getItem('indexNumber'));
+        sessionStorage.setItem('commentNavNum', index);
+      },
+      toGameDowload(){
+        this.$router.push({name:'GameDetails'})
+        this.toTab(2)
+        setTimeout(()=>{
+          window.location.reload()
+        },100)
+      }
+    }
+  }
 
 </script>
 <style scoped>
@@ -79,13 +100,13 @@
   }
 
   .imgBox {
-    width: 400%;
+    width: 200%;
     height:400px;
-    animation: myfirst 10s infinite;
+    animation: myfirst 5s infinite;
   }
 
   .imgBox > img {
-    width: 25%;
+    width: 50%;
     float: left;
   }
 
@@ -94,24 +115,24 @@
     20% {
       transform: translateX(0);
     }
-    25% {
-      transform: translateX(-25%);
-    }
-    45% {
-      transform: translateX(-25%);
-    }
+    /*25% {*/
+      /*transform: translateX(-25%);*/
+    /*}*/
+    /*45% {*/
+      /*transform: translateX(-25%);*/
+    /*}*/
     50% {
       transform: translateX(-50%);
     }
     70% {
       transform: translateX(-50%);
     }
-    75% {
-      transform: translateX(-75%);
-    }
-    95% {
-      transform: translateX(-75%);
-    }
+    /*75% {*/
+      /*transform: translateX(-75%);*/
+    /*}*/
+    /*95% {*/
+      /*transform: translateX(-75%);*/
+    /*}*/
     100% {
       transform: translateX(0);
     }

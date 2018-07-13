@@ -96,6 +96,7 @@
         this.n = JSON.parse(sessionStorage.getItem('commentNavNum'));
       },
       change(index){
+
         this.toTab(index)
         setTimeout(()=>{
           window.location.reload()
